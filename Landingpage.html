@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clinic Management System</title>
+  <link rel="icon" type="image/x-icon" href="res/logo.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffdb58 !important;
+    }
+    .custom-navbar .nav-link:hover {
+      color: black;
+      padding: 1rem 2rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .custom-navbar .nav-link {
+      color: white;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .hero-section,
+    .feature-section,
+    .benefit-section {
+      padding: 80px 0;
+    }
+
+    .hero-image-box {
+      width: 100%;
+      height: 250px;
+      background-color: #dee2e6;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #666;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      color: #0d6efd;
+    }
+
+    .register-btn {
+      margin-top: 20px;
+    }
+    
+  .carousel-fixed-size {
+  width: 900px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+}
+
+.carousel-fixed-size .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-fixed-size .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+ 
+  </style>
+</head>
+<body>
+<body style="background-color: #ffdb58">
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid d-flex align-items-center">
+   
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand me-3" href="#">
+        <img src="logo.jpg" alt="Logo" height="30">
+      </a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Student Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero-section bg-white">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start">
+        <h1 class="mb-3">Clinic Management <br> SYSTEM - TIP Manila</h1>
+        <p class="lead">A bit of intro About cms kjdhdhddkkdljncncnnc</p>
+        <p>Dkkdjdhnmckkckccmc dkdjdhddjddjjncnx</p>
+        <a href="#" class="btn btn-dark register-btn">REGISTER NOW</a>
+      </div>
+     
+      <div class="col-md-6 text-center">
+        <div class="hero-image-box">[ Hero Image Placeholder ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-section bg-light text-center">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-4 border rounded-3 h-100 bg-white">
+          <div class="feature-icon mb-3">✔️</div>
+          <h5>Feature One</h5>
+          <p class="text-muted">Consectetur adipiscing elit. Rhoncus leo id, scelerisque purus.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded-3 h-100 bg-white">
+          <div class="feature-icon mb-3">👤</div>
+          <h5>Feature Two</h5>
+          <p class="text-muted">Cras ornare dui lorem, vel rhoncus elit venenatis sit amet.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 border rounded-3 h-100 bg-white">
+          <div class="feature-icon mb-3">⭐</div>
+          <h5>Feature Three</h5>
+          <p class="text-muted">Finibus ipsum eu nibh volutpat, in congue sapien vehicula.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="benefit-section bg-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2>Heading benefit of the website</h2>
+        <p><strong>Sed ut perspiciatis unde omnis iste natus error sit voluptatem...</strong></p>
+        <p>Ut auctor gravida nulla. Nam id erat elementum, accumsan dui non, porttitor lorem.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <div class="hero-image-box">[ Benefit Image Placeholder ]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="carousel-section bg-light pt-5 pb-3">
+  <div class="container text-center">
+
+   
+    <div class="carousel-fixed-size mx-auto shadow-lg mb-4 rounded-3">
+      <div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active">
+            <img src="jan.png" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="ray.jpg" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="zoe.jpg" class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+          <div class="carousel-item">
+            <img src="belle.jpg" class="d-block w-100" alt="Slide 4">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+  
+    <center>
+    <img src="logo.jpg" alt="Small Logo" height="50" class="mb-2">
+    <p class="mt-2 mb-0 fw-semibold fs-5">Clinic Management System - TIP Manila</p>
+    </center>
+</section>
+<section id="feedback" style="padding: 6rem 2rem; background: #f9f9f9;">
+  <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: bold; color: #111;">Send us a Feedback</h2>
+    <p style="color: #666; font-size: 1rem; margin-bottom: 3rem; line-height: 1.6;">
+      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+    </p>
+    <form style="display: flex; gap: 1rem; justify-content: center;">
+      <input 
+        type="text" 
+        placeholder="Comment" 
+        style="flex: 1; max-width: 300px; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem;"
+      />
+      <button 
+        type="submit" 
+        style="padding: 0.75rem 2rem; background-color: #222; color: #fff; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer style="margin-top: 6rem; background-color: #1a1a1a; padding: 2rem 1rem; text-align: center; color: #ccc;">
+    <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
+      <a href="#student-dashboard" style="text-decoration: none; color: #ccc;">Student Dashboard</a>
+      <a href="#about" style="text-decoration: none; color: #ccc;">About</a>
+      <a href="#contact" style="text-decoration: none; color: #ccc;">Contact</a>
+      <a href="#signin" style="text-decoration: none; color: #ccc;">Sign In</a>
+    </div>
+    <div style="font-size: 0.8rem; color: #888;">Location: T.I.P Manila Clinic <br> Email: info@tip,edu.ph <br> Number: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566</div>
+  </footer>
+</html>
