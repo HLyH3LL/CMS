@@ -16,37 +16,34 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #ffdb58 !important;
     }
-    /* Ensure navbar background color remains consistent */
-.custom-navbar {
-  background-color: #ffdb58; /* Adjust this color to your desired background color */
-}
 
-/* Ensure the collapsed navbar (hamburger menu) maintains the same background color */
-.custom-navbar .navbar-collapse {
-  background-color: #ffdb58; /* Match the navbar background color */
-}
+    /* Navbar consistency */
+    .custom-navbar {
+      background-color: #ffdb58;
+    }
 
-/* Make sure the navbar color doesn't change on hover or active states */
-.custom-navbar .nav-link {
-  color: white; /* Adjust text color to your preference */
-}
+    .custom-navbar .navbar-collapse {
+      background-color: #ffdb58;
+    }
 
-.custom-navbar .nav-link:hover {
-  color: #000000; /* Optional: Make text change on hover */
-}
+    .custom-navbar .nav-link {
+      color: white;
+    }
 
-.custom-navbar .navbar-toggler {
-  border-color: #ffdb58; /* Optional: Adjust border of hamburger icon */
-}
+    .custom-navbar .nav-link:hover {
+      color: #000000;
+    }
 
-.custom-navbar .navbar-toggler-icon {
-  background-color: #ffdb58; /* Optional: Adjust hamburger icon color */
-}
+    .custom-navbar .navbar-toggler {
+      border-color: #ffdb58;
+    }
 
-  
-    .hero-section,
-    .feature-section,
-    .benefit-section {
+    .custom-navbar .navbar-toggler-icon {
+      background-color: #fff; /* White hamburger icon */
+    }
+
+    /* Hero Section */
+    .hero-section, .feature-section, .benefit-section {
       padding: 80px 0;
     }
 
@@ -108,17 +105,75 @@
         align-items: center;
       }
     }
+
+    /* Feedback Form */
+    #feedback {
+      padding: 6rem 2rem;
+      background: #f9f9f9;
+    }
+
+    #feedback h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    #feedback p {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+
+    #feedback form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    #feedback input, #feedback button {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #feedback input {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    #feedback button {
+      padding: 0.75rem 2rem;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #222;
+    margin: 0 auto;
+  }
   </style>
 </head>
 
 <body style="background-color: #ffdb58">
-  <nav class="navbar navbar-expand-lg custom-navbar" style="background-color: #ffdb58;">
+  <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid d-flex align-items-center">
       <!-- Navbar Brand Logo -->
       <a class="navbar-brand me-3" href="#">
         <img src="../res/logo.jpg" alt="Logo" height="30" class="rounded-circle" />
       </a>
-  
+
       <!-- Toggler for Collapsing Navbar on Mobile -->
       <button
         class="navbar-toggler text-dark"
@@ -129,9 +184,9 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon bg-white rounded"></span> <!-- Changed to bg-white -->
+        <span class="navbar-toggler-icon bg-white rounded"></span>
       </button>
-  
+
       <!-- Search Bar for Larger Screens -->
       <form class="d-none d-lg-flex ms-auto me-3">
         <input
@@ -141,19 +196,18 @@
           aria-label="Search"
         />
       </form>
-  
+
       <!-- Collapsible Navbar Links -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="studentDB.html">Student Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="login.html">Sign In</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
 
   <section class="hero-section bg-white">
     <div class="container">
@@ -177,7 +231,7 @@
     </div>
   </section>
 
-  <section class="feature-section bg-light text-center">
+  <section id="features" class="feature-section bg-light text-center">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
@@ -200,22 +254,6 @@
             <h5>Medical Records (Student View)</h5>
             <p class="text-muted">View-only personal medical data</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="benefit-section bg-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <h2>Benefit of the website</h2>
-          <p>
-            Enables students to book appointments and submit health reports efficiently and centralizes clinic operations for students. It Provides real-time tracking and management of medical records A means of help to improve usability, reduce cognitive load, and ensure accessibility
-          </p>
-        </div>
-        <div class="col-md-6 text-center">
-          <div class="hero-image-box">[ Benefit Image Placeholder ]</div>
         </div>
       </div>
     </div>
@@ -261,7 +299,7 @@
     </div>
   </section>
 
-  <section id="feedback" style="padding: 6rem 2rem; background: #f9f9f9;">
+  <section id="contact" style="padding: 6rem 2rem; background: #f9f9f9;">
     <div style="max-width: 600px; margin: 0 auto; text-align: center;">
       <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: bold; color: #111;">Send us a Feedback</h2>
       <p style="color: #666; font-size: 1rem; margin-bottom: 3rem; line-height: 1.6;">
@@ -288,8 +326,34 @@
       Email: info@tip,edu.ph <br />
       Number: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566
     </div>
+    <div class="text-center mt-4">
+      <a href="#" id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #ffdb58; color: #222; border-radius: 50%; padding: 12px; text-decoration: none; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
+        <!-- Custom CSS Arrow -->
+        <div class="arrow-up"></div>
+      </a>
+    </div>
   </footer>
 
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
+  <script>
+    // Show the "Back to top" button when the user scrolls down
+    window.onscroll = function() {
+      const backToTopButton = document.getElementById("back-to-top");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+  
+    // Smooth scroll to the top when the button is clicked
+    document.getElementById("back-to-top").onclick = function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
 </body>
 </html>
