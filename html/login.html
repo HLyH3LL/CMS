@@ -28,7 +28,8 @@
         z-index: -1;
       }
       .login-container {
-        max-width: 320px;
+        width: 320px;
+        height: 520px; /* increased height to fit forgot password */
         border: 1px solid #6b7280;
         border-radius: 12px;
         padding: 1.5rem;
@@ -37,6 +38,7 @@
         flex-direction: column;
         align-items: center;
         z-index: 1;
+        position: relative;
       }
       .login-container input.form-control {
         font-size: 0.75rem;
@@ -50,9 +52,13 @@
         color: #374151;
       }
       .login-container .forgot-password {
-        font-size: 0.75rem;
+        font-size: 0.55rem;
         color: #9ca3af;
         text-decoration: none;
+        margin-top: 0.75rem; /* added space */
+        margin-bottom: 0.5rem; /* added space */
+        text-align: center;
+        display: block;
       }
       .login-container .forgot-password:hover {
         text-decoration: underline;
@@ -80,7 +86,7 @@
         font-size: 0.55rem;
         color: #6b7280;
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 0.25rem;
       }
       .login-container .signup-text strong {
         font-weight: 600;
@@ -111,7 +117,7 @@
       alt="TIP Manila campus"
       class="background-image"
       height="auto"
-      src="../res/bg.jpg"
+      src="../res/483183418_992362106298591_6335792298222293459_n.jpg"
       width="auto"
     />
     <div class="login-container">
@@ -144,7 +150,7 @@
           />
         </div>
         <div
-          class="d-flex justify-content-between align-items-center mb-2"
+          class="d-flex align-items-center mb-2"
           style="font-size: 0.75rem;"
         >
           <div class="form-check">
@@ -157,7 +163,6 @@
             />
             <label class="form-check-label" for="rememberMe">Remember me</label>
           </div>
-          <a href="#" class="forgot-password">Forgot Password</a>
         </div>
         <button
           type="button"
@@ -167,13 +172,14 @@
           Log In
         </button>
         <div class="or-text">or</div>
-        <button type="button" class="btn btn-google w-100">
+        <button type="button" class="btn btn-google w-100 mb-2">
           Continue with Google
         </button>
       </form>
+      <a href="#" class="forgot-password">Forgot Password</a>
       <p class="signup-text">
         Don't have an account <strong>yet?</strong>
-        <a href="#">Sign up here</a>
+        <a href="signup.html">Sign up here</a>
       </p>
     </div>
   </body>
