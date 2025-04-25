@@ -4,140 +4,196 @@
   <meta charset="UTF-8">
   <title>Daily Census</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <style>
+    body {
+      font-family: 'Segoe UI';
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-<style> /*ISABELLE*/
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .topbar {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: #ffdb58;
-    gap: 10px;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    flex-wrap: wrap;
-  }
-  
-  .logo {
-    font-weight: bold;
-    font-size: 20px;
-    margin-right: auto;
-  }
-  
-  .topbar a.topbar-btn {
-    padding: 6px 12px;
-    border: 1px solid #999;
-    background: #fff;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background 0.2s;
-  }
-  
-  .topbar a.topbar-btn:hover {
-    background: #ddd;
-  }
-  
-  /* Main content */
-  .container {
-    padding: 30px;
-    max-width: 900px;
-    margin-top: 30px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 24px;
-  }
-  
-  .form-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-  
-  .left-column, .right-column {
-    flex: 1;
-    min-width: 300px;
-  }
-  
-  label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
-  input[type="text"], select, input[type="date"], textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  .checkbox-group label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  textarea {
-    height: 100px;
-    resize: vertical;
-    margin-top: 5px;
-    font-family: sans-serif;
-  }
-  
-  .warning {
-    color: red;
-    font-size: 12px;
-    display: none;
-  }
-  
-  .submit-container {
-    text-align: center;
-    margin-top: 30px;
-    width: 100%;
-  }
-  
-  .submit-container button {
-    padding: 10px 20px;
-    font-weight: bold;
-    border: 1px solid #000;
-    background-color: #e0e0e0;
-    cursor: pointer;
-  }
-  
-</style>
+    .topbar {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background: #ffdb58;
+      gap: 10px;
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+      margin-left: 20px;
+      font-family: 'Segoe UI', sans-serif;
+}
+
+    .topbar img {
+      height: 30px;
+      border-radius: 50%;
+}
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+}
+
+    .topbar-links {
+      display: flex;
+      gap: 10px;
+      margin-left:75%; 
+}
+
+    .topbar-btn {
+      padding: 6px 12px;
+      border: 1px solid #999;
+      background: #fff;
+      text-decoration: none;
+      color: #000;
+      cursor: pointer;
+      border-radius: 7px;
+      font-size: 14px;
+      transition: background 0.2s;
+}
+
+    .topbar-btn:hover {
+      background: #ddd;
+}
+
+
+    .container {
+      padding: 30px;
+      max-width: 900px;
+      margin-top: 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .form-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .left-column, .right-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+
+    input[type="text"], select, input[type="date"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+      margin-top: 5px;
+      font-family: sans-serif;
+    }
+
+    .warning {
+      color: red;
+      font-size: 12px;
+      display: none;
+    }
+
+    .submit-container {
+      text-align: center;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .submit-container button {
+      padding: 10px 20px;
+      border: 1px solid #000;
+      background-color: #1a1a1a;
+      cursor: pointer;
+      color: white;
+      border-radius: 10px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      text-align: center;
+      color: #ccc;
+      font-size: 0.8rem;
+      box-sizing: border-box;
+}
+
+    footer a {
+      text-decoration: none;
+      color: #ccc;
+}
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+}
+
+
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffdb58;
+      color: #222;
+      border-radius: 50%;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
 <body>
-  <header class="topbar">
-    <div class="logo">TIP CMS</div>
-    <a href="studentDB.html" class="topbar-btn">Student Dashboard</a>
-    <a href="medicalrecord.html" class="topbar-btn">My Medical Record</a>
-  </header>
+
+    <header class="topbar">
+        <a href="studentDB.html">
+          <img src="../res/logo.jpg" alt="Logo">
+        </a>
+        <div class="logo">TIP CMS</div>
+        
+         <div class="topbar-links">
+          <a href="studentDB.html" class="topbar-btn">Student Dashboard</a>
+          <a href="medicalrecord.html" class="topbar-btn">My Medical Record</a>
+        </div>
+      </header>
+      
 
   <main class="container">
     <h1>Daily Census</h1>
     <form class="form-grid" id="dailyForm">
-
       <div class="left-column">
-        <label>Purpose of Visit</label>
+        <label style="font-weight: bold;">Purpose of Visit</label>
         <select id="visitPurpose">
           <option value="">Select</option>
           <option>Check-Up</option>
@@ -146,17 +202,17 @@
         </select>
         <small class="warning" id="purposeWarning"></small>
 
-        <label>Temperature (In Celcius)</label>
+        <label style="font-weight: bold;">Temperate (In Celcius)</label>
         <input type="text" id="temperature" placeholder="Enter temperature">
         <small class="warning" id="tempWarning"></small>
 
-        <label>Date Today</label>
+        <label style="font-weight: bold;">Date Today</label>
         <input type="date" id="todayDate">
         <small class="warning" id="dateWarning"></small>
       </div>
 
       <div class="right-column">
-        <label>Symptom Checker</label>
+        <label style="font-weight: bold;">Symptom Checker</label>
         <div class="checkbox-group">
           <label><input type="checkbox"> Fever or chills</label>
           <label><input type="checkbox"> Cough</label>
@@ -167,70 +223,86 @@
           <label><input type="checkbox"> Diarrhea</label>
         </div>
 
-        <label>Others</label>
+        <label style="font-weight: bold;">Others</label>
         <textarea placeholder="Type here"></textarea>
       </div>
 
       <div class="submit-container">
-        <button type="submit">SUBMIT</button>
+        <button type="submit">Submit</button>
       </div>
-
     </form>
   </main>
+  <main class="container">
+  </main>
+  
+  <footer style="margin-top: 6rem; background-color: #1a1a1a; width: 100%; padding: 2rem 1rem; text-align: center; color: #ccc; box-sizing: border-box;">
+    <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
+      <a href="login.html" style="text-decoration: none; color: #ccc;">Student Dashboard</a>
+      <a href="signup.html" style="text-decoration: none; color: #ccc;">Sign In</a>
+    </div>
+    <div style="font-size: 0.8rem; color: #888;">
+      Location: T.I.P Manila Clinic <br />
+      Email: info@tip.edu.ph <br />
+      Number: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566
+    </div>
+    <div class="text-center mt-4">
+      <a href="#" id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #ffdb58; color: #222; border-radius: 50%; padding: 12px; text-decoration: none; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
+        <div class="arrow-up"></div>
+      </a>
+    </div>
+  </footer>
+  
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const dateInput = document.getElementById("todayDate");
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.value = today;
-  
-    const form = document.getElementById("dailyForm");
-  
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-  
-      let valid = true;
-  
-      // For Purpose
-      const purpose = document.getElementById("visitPurpose");
-      const purposeWarning = document.getElementById("purposeWarning");
-      if (purpose.value === "") {
-        purposeWarning.textContent = "Purpose of Visit is required.";
-        purposeWarning.style.display = "block";
-        valid = false;
-      } else {
-        purposeWarning.style.display = "none";
-      }
-  
-      // For Temperature
-      const temp = document.getElementById("temperature");
-      const tempWarning = document.getElementById("tempWarning");
-      if (temp.value.trim() === "") {
-        tempWarning.textContent = "Temperature is required.";
-        tempWarning.style.display = "block";
-        valid = false;
-      } else {
-        tempWarning.style.display = "none";
-      }
-  
-      // For Date
-      const dateWarning = document.getElementById("dateWarning");
-      if (dateInput.value === "") {
-        dateWarning.textContent = "Date is required.";
-        dateWarning.style.display = "block";
-        valid = false;
-      } else {
-        dateWarning.style.display = "none";
-      }
-  
-      // For Final Submission
-      if (valid) {
-        alert("Form submitted successfully!");
-        form.reset();
-        dateInput.value = today; // Set date back to today
-      }
+    document.addEventListener("DOMContentLoaded", () => {
+      const dateInput = document.getElementById("todayDate");
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.value = today;
+
+      const form = document.getElementById("dailyForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let valid = true;
+
+        const purpose = document.getElementById("visitPurpose");
+        const purposeWarning = document.getElementById("purposeWarning");
+        if (purpose.value === "") {
+          purposeWarning.textContent = "Purpose of Visit is required.";
+          purposeWarning.style.display = "block";
+          valid = false;
+        } else {
+          purposeWarning.style.display = "none";
+        }
+
+        const temp = document.getElementById("temperature");
+        const tempWarning = document.getElementById("tempWarning");
+        if (temp.value.trim() === "") {
+          tempWarning.textContent = "Temperature is required.";
+          tempWarning.style.display = "block";
+          valid = false;
+        } else {
+          tempWarning.style.display = "none";
+        }
+
+        const dateWarning = document.getElementById("dateWarning");
+        if (dateInput.value === "") {
+          dateWarning.textContent = "Date is required.";
+          dateWarning.style.display = "block";
+          valid = false;
+        } else {
+          dateWarning.style.display = "none";
+        }
+
+        if (valid) {
+          alert("Form submitted successfully!");
+          form.reset();
+          dateInput.value = today;
+        }
+      });
     });
-  });
   </script>
+
 </body>
 </html>
