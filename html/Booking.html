@@ -151,7 +151,7 @@
                 <p class="mb-4">Review your details and click confirm to finish the process.</p>
                 <div class="d-flex justify-content-between">
                   <button class="btn btn-secondary" onclick="prevStep()">Back</button>
-                  <button class="btn btn-success">Confirm Appointment</button>
+                  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmationModal">Confirm Appointment</button>
                 </div>
               </div>
           
@@ -254,6 +254,25 @@ window.onscroll = function() {
       updateStep(currentStep);
     });
   </script>
+  
+ 
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> 
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmationModalLabel">Appointment Confirmed</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Your appointment has been successfully scheduled. Please check your email for confirmation details.</p>
+          <p><strong>Thank you for using the Clinic Management System!</strong></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning text-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
 </body>
 </html>
