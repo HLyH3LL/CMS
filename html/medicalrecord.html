@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Medical Record</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+    }
+
+    .top-bar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #f0f0f0;
+     padding: 10px 20px;
+     border-bottom: 1px solid #ccc;
+     font-family: Arial, sans-serif;
+}
+
+    .title {
+     font-weight: bold;
+     font-size: 18px;
+}
+
+    .nav-btn {
+     text-decoration: none;
+     background-color: white;
+     border: 1px solid black;
+     padding: 6px 12px;
+     border-radius: 4px;
+     font-weight: bold;
+     color: black;
+     font-size: 14px;
+     cursor: pointer;
+     transition: background-color 0.2s ease;
+}
+
+    .nav-btn:hover {
+      background-color: #ddd;
+}
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border: 1px solid #ccc;
+    }
+
+    h2.title {
+      text-align: center;
+      border: 1px solid #ccc;
+      display: inline-block;
+      padding: 5px 20px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      background: #f0f0f0;
+      display: inline-block;
+    }
+
+    .record-box, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      font-family: sans-serif;
+    }
+
+    .record-box {
+      background: #fdfdfd;
+      white-space: pre-wrap;
+    }
+
+    .emergency {
+      display: flex;
+      gap: 20px;
+    }
+
+    .emergency div,
+    .emergency textarea {
+      width: 100%;
+      font-family: sans-serif;
+    }
+
+    .save-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .save-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="title">TIP CMS</div>
+        <div class="nav-buttons">
+          <a class="nav-btn" href="studentDB.html">Student Dashboard</a>
+          <button class="nav-btn" onclick="editMode()">Update Medical Record</button>
+        </div>
+      </div>
+      
+
+  <div class="container">
+    <h2 class="title">Student Medical Record</h2>
+
+    <div class="section">
+      <h3>Personal Information</h3>
+      <div id="personalView" class="record-box"></div>
+      <textarea id="personalEdit" class="hidden" placeholder="Name:\nStudent ID:\nDate of Birth:"></textarea>
+    </div>
+
+    <div class="section">
+      <h3>Medical History</h3>
+      <div id="medicalView" class="record-box"></div>
+      <textarea id="medicalEdit" class="hidden" placeholder="Allergies:\nCondition(s):\nPast Surgeries:"></textarea>
+    </div>
+
+    <div class="section">
+      <h3>Emergency Contact</h3>
+      <div class="emergency">
+        <div id="emergency1View" class="record-box"></div>
+        <div id="emergency2View" class="record-box"></div>
+      </div>
+      <div class="emergency hidden" id="emergencyEdit">
+        <textarea id="emergency1Edit" placeholder="Name:\nContact Number:\nRelation to the Student:"></textarea>
+        <textarea id="emergency2Edit" placeholder="Name:\nContact Number:\nRelation to the Student:"></textarea>
+      </div>
+    </div>
+
+    <button id="saveBtn" class="save-btn hidden" onclick="saveRecord()">Save Medical Record</button>
+  </div>
+
+  <script>
+    function loadData() {
+      const record = JSON.parse(localStorage.getItem("studentMedicalRecord")) || {
+        personalInfo: "Name:\nStudent ID:\nDate of Birth:",
+        medicalHistory: "Allergies:\nCondition(s):\nPast Surgeries:",
+        emergency1: "Name:\nContact Number:\nRelation to the Student:",
+        emergency2: "Name:\nContact Number:\nRelation to the Student:"
+      };
+
+      document.getElementById("personalView").innerText = record.personalInfo;
+      document.getElementById("medicalView").innerText = record.medicalHistory;
+      document.getElementById("emergency1View").innerText = record.emergency1;
+      document.getElementById("emergency2View").innerText = record.emergency2;
+
+      document.getElementById("personalEdit").value = record.personalInfo;
+      document.getElementById("medicalEdit").value = record.medicalHistory;
+      document.getElementById("emergency1Edit").value = record.emergency1;
+      document.getElementById("emergency2Edit").value = record.emergency2;
+    }
+
+    function viewMode() {
+      document.getElementById("personalView").classList.remove("hidden");
+      document.getElementById("medicalView").classList.remove("hidden");
+      document.getElementById("emergency1View").classList.remove("hidden");
+      document.getElementById("emergency2View").classList.remove("hidden");
+
+      document.getElementById("personalEdit").classList.add("hidden");
+      document.getElementById("medicalEdit").classList.add("hidden");
+      document.getElementById("emergencyEdit").classList.add("hidden");
+      document.getElementById("saveBtn").classList.add("hidden");
+
+      loadData();
+    }
+
+    function editMode() {
+      document.getElementById("personalView").classList.add("hidden");
+      document.getElementById("medicalView").classList.add("hidden");
+      document.getElementById("emergency1View").classList.add("hidden");
+      document.getElementById("emergency2View").classList.add("hidden");
+
+      document.getElementById("personalEdit").classList.remove("hidden");
+      document.getElementById("medicalEdit").classList.remove("hidden");
+      document.getElementById("emergencyEdit").classList.remove("hidden");
+      document.getElementById("saveBtn").classList.remove("hidden");
+    }
+
+    function saveRecord() {
+      const record = {
+        personalInfo: document.getElementById("personalEdit").value,
+        medicalHistory: document.getElementById("medicalEdit").value,
+        emergency1: document.getElementById("emergency1Edit").value,
+        emergency2: document.getElementById("emergency2Edit").value
+      };
+
+      localStorage.setItem("studentMedicalRecord", JSON.stringify(record));
+      alert("Medical record saved!");
+      viewMode();
+    }
+
+    window.onload = viewMode;
+  </script>
+</body>
+</html>
