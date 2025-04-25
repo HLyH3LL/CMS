@@ -123,6 +123,15 @@
       text-align: center;
     }
 
+    .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #222;
+    margin: 0 auto;
+  }
+
   </style>
 </head>
 
@@ -308,6 +317,12 @@
       Email: info@tip,edu.ph <br />
       Number: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566
     </div>
+    <div class="text-center mt-4">
+      <a href="#" id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #ffdb58; color: #222; border-radius: 50%; padding: 12px; text-decoration: none; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
+        <!-- Custom CSS Arrow -->
+        <div class="arrow-up"></div>
+      </a>
+    </div>
   </footer>
 
 
@@ -330,5 +345,23 @@
       document.querySelector('form').reset();
     }
   </script>
+
+<script>
+  // Show the "Back to top" button when the user scrolls down
+  window.onscroll = function() {
+    const backToTopButton = document.getElementById("back-to-top");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  };
+
+  // Smooth scroll to the top when the button is clicked
+  document.getElementById("back-to-top").onclick = function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
 </body>
 </html>
