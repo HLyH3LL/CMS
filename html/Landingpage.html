@@ -16,34 +16,37 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #ffdb58 !important;
     }
+    
+.custom-navbar {
+  background-color: #ffdb58; 
+}
 
 
-    .custom-navbar {
-      background-color: #ffdb58;
-    }
+.custom-navbar .navbar-collapse {
+  background-color: #ffdb58; 
+}
 
-    .custom-navbar .navbar-collapse {
-      background-color: #ffdb58;
-    }
 
-    .custom-navbar .nav-link {
-      color: white;
-    }
+.custom-navbar .nav-link {
+  color: white; 
+}
 
-    .custom-navbar .nav-link:hover {
-      color: #000000;
-    }
+.custom-navbar .nav-link:hover {
+  color: #000000; 
+}
 
-    .custom-navbar .navbar-toggler {
-      border-color: #ffdb58;
-    }
+.custom-navbar .navbar-toggler {
+  border-color: #ffdb58; 
+}
 
-    .custom-navbar .navbar-toggler-icon {
-      background-color: #fff; 
-    }
+.custom-navbar .navbar-toggler-icon {
+  background-color: #ffdb58; 
+}
 
   
-    .hero-section, .feature-section, .benefit-section {
+    .hero-section,
+    .feature-section,
+    .benefit-section {
       padding: 80px 0;
     }
 
@@ -105,90 +108,18 @@
         align-items: center;
       }
     }
-
- 
-    #feedback {
-      padding: 6rem 2rem;
-      background: #f9f9f9;
-    }
-
-    #feedback h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      font-weight: bold;
-      color: #111;
-    }
-
-    #feedback p {
-      color: #666;
-      font-size: 1rem;
-      margin-bottom: 3rem;
-      line-height: 1.6;
-    }
-
-    #feedback form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    #feedback input, #feedback button {
-      width: 100%;
-      max-width: 400px;
-    }
-
-    #feedback input {
-      padding: 0.75rem 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    #feedback button {
-      padding: 0.75rem 2rem;
-      background-color: #222;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 10px solid #222;
-    margin: 0 auto;
-  }
-
-  .popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      border-radius: 5px;
-      font-size: 1rem;
-      text-align: center;
-    }
-
   </style>
 </head>
 
 <body style="background-color: #ffdb58">
-  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+  <nav class="navbar navbar-expand-lg custom-navbar" style="background-color: #ffdb58;">
     <div class="container-fluid d-flex align-items-center">
-  
+      <!-- Navbar Brand Logo -->
       <a class="navbar-brand me-3" href="#">
         <img src="../res/logo.jpg" alt="Logo" height="30" class="rounded-circle" />
       </a>
   
+      
       <button
         class="navbar-toggler text-dark"
         type="button"
@@ -198,9 +129,10 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon bg-white rounded"></span>
+        <span class="navbar-toggler-icon bg-white rounded"></span> 
       </button>
   
+      
       <form class="d-none d-lg-flex ms-auto me-3">
         <input
           class="form-control"
@@ -210,27 +142,31 @@
         />
       </form>
   
+      
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="studentDB.html">Student Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="login.html">Sign In</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  
+
   <section class="hero-section bg-white">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start">
-          <h1 class="mb-3">Clinic Management <br /> SYSTEM - TIP Manila</h1>
+          <h1 class="mb-3">Clinic Management <br /> System - TIP Manila</h1>
           <p class="lead">
-            A Clinic Management System (CMS) is a digital tool designed to streamline healthcare tasks like appointment bookings and managing medical records. It helps reduce errors and save time by automating administrative processes. TIP CMS is specifically built for TIP Manila students, allowing them to schedule appointments and submit health data easily. The system improves efficiency and enhances the overall clinic experience for both students and staff.
+            TIP CMS, a web-based Clinic Management System designed for TIPians. The system allows users to book appointments, submit daily health censuses, and manage their medical records through an intuitive and centralized platform. 
+
           </p>
   
           <div class="d-flex justify-content-center justify-content-md-start flex-wrap gap-2">
-            <a href="signup.html" class="btn btn-dark register-btn">REGISTER NOW</a>
+            <a href="sig" class="btn btn-dark register-btn">Register </a>
             <a href="login.html" class="btn opacity-75 register-btn" style="background-color: #ffdb58; color: black;">Sign In</a>
           </div>
         </div>
@@ -243,9 +179,8 @@
       </div>
     </div>
   </section>
-  
 
-  <section id="features" class="feature-section bg-light text-center">
+  <section class="feature-section bg-light text-center">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
@@ -277,18 +212,17 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
-          <h2>Benefits of the Website</h2>
-          <p>Efficient appointment booking, centralized operations, and real-time tracking of medical records with improved usability and accessibility.</p>
+          <h2>Benefit of the website</h2>
+          <p>
+            Enables students to book appointments and submit health reports efficiently and centralizes clinic operations for students. It Provides real-time tracking and management of medical records A means of help to improve usability, reduce cognitive load, and ensure accessibility
+          </p>
         </div>
         <div class="col-md-6 text-center">
-          <div class="hero-image-box" style="border-radius: 15px; overflow: hidden; max-width: 80%; margin: 0 auto;">
-            <img src="C:\Users\user\OneDrive\Documents\HCI FINAL PROJ\CMS-1\res\483183418_992362106298591_6335792298222293459_n.jpg" alt="Benefit Image" class="img-fluid" style="width: 100%; height: auto; object-fit: cover;" />
-          </div>
+          <div class="hero-image-box">[ Benefit Image Placeholder ]</div>
         </div>
       </div>
     </div>
   </section>
-  
 
   <section class="carousel-section bg-light pt-5 pb-3">
     <div class="container text-center">
@@ -322,7 +256,7 @@
         <p class="mt-2 mb-0 fw-semibold fs-5">The Developers</p>
         <div class="d-flex justify-content-evenly gap-2 flex-wrap mt-2 mb-0  fs-5">
           <span>Janna Marie Solano</span>
-          <span>Raven John Unera</span>
+          <span>John Raven Unera</span>
           <span>Zoe Felicia Valdez</span>
           <span>Isabelle Rodrigo</span>
         </div>
@@ -330,7 +264,7 @@
     </div>
   </section>
 
-  <section id="contact" style="padding: 6rem 2rem; background: #f9f9f9;">
+  <section id="feedback" style="padding: 6rem 2rem; background: #f9f9f9;">
     <div style="max-width: 600px; margin: 0 auto; text-align: center;">
       <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: bold; color: #111;">Send us a Feedback</h2>
       <p style="color: #666; font-size: 1rem; margin-bottom: 3rem; line-height: 1.6;">
@@ -353,59 +287,18 @@
 
   <footer style="margin-top: 6rem; background-color: #1a1a1a; padding: 2rem 1rem; text-align: center; color: #ccc;">
     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
-      <a href="studentDB.html" style="text-decoration: none; color: #ccc;">Student Dashboard</a>
-      <a href="login.html" style="text-decoration: none; color: #ccc;">Sign In</a>
+      <a href="#student-dashboard" style="text-decoration: none; color: #ccc;">Student Dashboard</a>
+      <a href="#about" style="text-decoration: none; color: #ccc;">About</a>
+      <a href="#contact" style="text-decoration: none; color: #ccc;">Contact</a>
+      <a href="#signin" style="text-decoration: none; color: #ccc;">Sign In</a>
     </div>
     <div style="font-size: 0.8rem; color: #888;">
       Location: T.I.P Manila Clinic <br />
       Email: info@tip,edu.ph <br />
       Number: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566
     </div>
-    <div class="text-center mt-4">
-      <a href="#" id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #ffdb58; color: #222; border-radius: 50%; padding: 12px; text-decoration: none; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
-  
-        <div class="arrow-up"></div>
-      </a>
-    </div>
   </footer>
 
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- 
-
-  <script>
-    function showPopup(event) {
-      event.preventDefault(); 
-
-      
-      const popup = document.getElementById('popup');
-      popup.style.display = 'block';
-
-      
-      setTimeout(() => {
-        popup.style.display = 'none';
-      }, 4000);
-
-    
-      document.querySelector('form').reset();
-    }
-  </script>
-  <script>
-   
-    window.onscroll = function() {
-      const backToTopButton = document.getElementById("back-to-top");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    };
-  
- 
-    document.getElementById("back-to-top").onclick = function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  </script>
 </body>
 </html>
