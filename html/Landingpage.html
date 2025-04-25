@@ -322,7 +322,7 @@
     </div>
     <div class="text-center mt-4">
       <a href="#" id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #ffdb58; color: #222; border-radius: 50%; padding: 12px; text-decoration: none; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
-        <!-- Custom CSS Arrow -->
+     
         <div class="arrow-up"></div>
       </a>
     </div>
@@ -333,24 +333,24 @@
 
   <script>
     function showPopup(event) {
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault(); 
 
-      // Show the popup
+      
       const popup = document.getElementById('popup');
       popup.style.display = 'block';
 
-      // Hide the popup after 3 seconds
+   
       setTimeout(() => {
         popup.style.display = 'none';
       }, 3000);
 
-      // Optionally, reset the form after submission
+
       document.querySelector('form').reset();
     }
   </script>
 
 <script>
-  // Show the "Back to top" button when the user scrolls down
+
   window.onscroll = function() {
     const backToTopButton = document.getElementById("back-to-top");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -360,7 +360,7 @@
     }
   };
 
-  // Smooth scroll to the top when the button is clicked
+  
   document.getElementById("back-to-top").onclick = function(e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
