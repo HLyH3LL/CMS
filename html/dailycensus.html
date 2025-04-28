@@ -105,6 +105,10 @@ input[type="text"], select, input[type="date"], textarea {
   margin-top: 10px;
 }
 
+.checkbox-group label {
+  font-weight: normal;  
+}
+
 textarea {
   height: 100px;
   resize: vertical;
@@ -217,7 +221,7 @@ footer .footer-info {
         </select>
         <small class="warning" id="purposeWarning"></small>
 
-        <label style="font-weight: bold;">Temperate (In Celcius)</label>
+        <label style="font-weight: bold;">Temperature (In Celcius)</label>
         <input type="text" id="temperature" placeholder="Enter temperature">
         <small class="warning" id="tempWarning"></small>
 
@@ -236,7 +240,7 @@ footer .footer-info {
           <label><input type="checkbox"> Loss of taste or smell</label>
           <label><input type="checkbox"> Sore throat</label>
           <label><input type="checkbox"> Diarrhea</label>
-        </div>
+        </div>        
 
         <label style="font-weight: bold;">Others</label>
         <textarea placeholder="Type here"></textarea>
