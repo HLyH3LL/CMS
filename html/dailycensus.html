@@ -5,160 +5,145 @@
   <title>Daily Census</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: 'Segoe UI';
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      background: #ffdb58;
-      gap: 10px;
-      width: 100%;
-      border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
-      margin-left: 20px;
-      font-family: 'Segoe UI', sans-serif;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; 
+  box-sizing: border-box;
 }
 
-    .topbar img {
-      height: 30px;
-      border-radius: 50%;
+header {
+  width: 100%;
+  background-color: #ffdb58;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
 }
 
-    .logo {
-      font-weight: bold;
-      font-size: 20px;
+header img {
+  height: 30px;
+  border-radius: 50%;
 }
 
-.topbar-links {
+header .logo {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px; 
+}
+
+header .topbar-links {
   display: flex;
   gap: 15px;
-  margin-left: 70%; 
+  margin-left: auto; 
 }
 
-.nav-link {
+header .nav-link {
   text-decoration: none;
-  color: white; 
+  color: white;
   padding: 8px 16px;
-  border: none; 
-  background: none; 
   font-size: 14px;
-  transition: color 0.3s ease; 
-  font-family: sans-serif, 'Segoe UI';
+  transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-  color: black; 
-}
-
-    .topbar-btn {
-      padding: 6px 12px;
-      border: 1px solid #999;
-      background: #fff;
-      text-decoration: none;
-      color: #000;
-      cursor: pointer;
-      border-radius: 7px;
-      font-size: 14px;
-      transition: background 0.2s;
-}
-
-    .topbar-btn:hover {
-      background: #ddd;
+header .nav-link:hover {
+  color: black;
 }
 
 
-    .container {
-      padding: 30px;
-      max-width: 900px;
-      margin-top: 30px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 24px;
-    }
-
-    .form-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .left-column, .right-column {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-    }
-
-    input[type="text"], select, input[type="date"], textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      box-sizing: border-box;
-    }
-
-    .checkbox-group label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    textarea {
-      height: 100px;
-      resize: vertical;
-      margin-top: 5px;
-      font-family: sans-serif;
-    }
-
-    .warning {
-      color: red;
-      font-size: 12px;
-      display: none;
-    }
-
-    .submit-container {
-      text-align: center;
-      margin-top: 30px;
-      width: 100%;
-    }
-
-    .submit-container button {
-      padding: 10px 20px;
-      border: 1px solid #000;
-      background-color: #1a1a1a;
-      cursor: pointer;
-      color: white;
-      border-radius: 10px;
-    }
-
-    footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+main.container {
+  padding: 30px;
+  max-width: 900px;
+  margin-top: 30px;
   width: 100%;
+  box-sizing: border-box;
+  flex: 1; 
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.form-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px; 
+}
+
+.left-column, .right-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+input[type="text"], select, input[type="date"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-top: 10px;
+}
+
+.checkbox-group label {
+  font-weight: normal;  
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+  margin-top: 5px;
+}
+
+.warning {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+.submit-container {
+  text-align: center;
+  width: 100%; 
+}
+
+.submit-container button {
+  padding: 10px 20px;
+  border: 1px solid #000;
   background-color: #1a1a1a;
-  padding: 1rem;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  width: auto; 
+}
+
+footer {
+  background-color: #1a1a1a;
+  width: 100%;
+  padding: 2rem 1rem;
   text-align: center;
   color: #ccc;
-  font-size: 0.8rem;
   box-sizing: border-box;
-  z-index: 1000; 
+  margin-top: 30px; 
 }
 
 footer a {
@@ -167,7 +152,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #fff; 
+  color: #fff;
 }
 
 footer .footer-links {
@@ -178,25 +163,33 @@ footer .footer-links {
   flex-wrap: wrap;
 }
 
-main {
-  padding-bottom: 100px; /
+footer .footer-links a {
+  font-size: 14px;
 }
 
+footer .footer-info {
+  font-size: 0.8rem;
+  color: #888;
+}
 
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffdb58;
+  color: #222;
+  border-radius: 50%;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
 
-    #back-to-top {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ffdb58;
-      color: #222;
-      border-radius: 50%;
-      padding: 12px;
-      text-decoration: none;
-      font-size: 24px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
+#back-to-top:active {
+  background-color: #ffd700;
+}
+
   </style>
 </head>
 <body>
@@ -228,7 +221,7 @@ main {
         </select>
         <small class="warning" id="purposeWarning"></small>
 
-        <label style="font-weight: bold;">Temperate (In Celcius)</label>
+        <label style="font-weight: bold;">Temperature (In Celcius)</label>
         <input type="text" id="temperature" placeholder="Enter temperature">
         <small class="warning" id="tempWarning"></small>
 
@@ -247,7 +240,7 @@ main {
           <label><input type="checkbox"> Loss of taste or smell</label>
           <label><input type="checkbox"> Sore throat</label>
           <label><input type="checkbox"> Diarrhea</label>
-        </div>
+        </div>        
 
         <label style="font-weight: bold;">Others</label>
         <textarea placeholder="Type here"></textarea>

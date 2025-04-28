@@ -11,33 +11,45 @@
       background: #f4f6f8;
     }
 
-    .topbar {
+    header {
+  width: 100%;
+  background-color: #ffdb58;
+  padding: 10px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  background: #ffdb58;
   gap: 10px;
-  width: 100%;
-  border-bottom: 1px solid #ccc;
-  flex-wrap: wrap;
   font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
 }
 
-.topbar img {
+header img {
   height: 30px;
   border-radius: 50%;
 }
 
-.logo {
+header .logo {
   font-weight: bold;
   font-size: 20px;
+  margin-left: 10px; 
 }
 
-.topbar-links {
+header .topbar-links {
   display: flex;
   gap: 15px;
-  margin-left: 70%; 
-  align-items: center;
+  margin-left: auto; 
+}
+
+header .nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+header .nav-link:hover {
+  color: black;
 }
 
 .nav-link {
