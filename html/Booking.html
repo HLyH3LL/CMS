@@ -9,56 +9,56 @@
     .custom-navbar {
       background-color: #ffdb58;
     }
-
-    .custom-navbar .navbar-collapse {
-      background-color: #ffdb58;
-    }
-
     .custom-navbar .nav-link {
       color: white;
     }
-
     .custom-navbar .nav-link:hover {
-      color: #000000;
+      color: #000;
     }
-
     .custom-navbar .navbar-toggler {
       border-color: #ffdb58;
     }
-
-    .custom-navbar .navbar-toggler-icon {
-      background-color: #ffdb58;
+    footer {
+      background-color: #1a1a1a;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #ccc;
     }
-
-    .arrow-up {
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-bottom: 10px solid #222;
-      margin: 0 auto;
+    footer a {
+      text-decoration: none;
+      color: #ccc;
+      margin: 0 1rem;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffdb58;
+      color: #222;
+      border-radius: 50%;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
     }
   </style>
 </head>
+
 <body>
-  
+ 
   <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
-    <div class="container-fluid d-flex align-items-center">
+    <div class="container-fluid">
       <a class="navbar-brand me-3" href="#">
         <img src="../res/logo.jpg" alt="Logo" height="30" class="rounded-circle" />
       </a>
-      <button
-        class="navbar-toggler text-dark"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon bg-white rounded"></span>
       </button>
-
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="studentDB.html">Student Dashboard</a></li>
@@ -71,16 +71,15 @@
 
   
   <div class="container my-5 pt-5">
-    <div class="row">
-      
+    <div class="row g-4">
+     
       <div class="col-md-7">
         <div class="border rounded p-4">
           <h4 class="mb-4">Book Appointment with CMS</h4>
-
           
           <div class="mb-4">
             <div class="progress" style="height: 10px;">
-              <div id="progressBar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div id="progressBar" class="progress-bar" role="progressbar" style="width: 25%;"></div>
             </div>
             <div class="d-flex justify-content-between mt-2 text-center small fw-semibold">
               <div style="width: 25%;">1<br><span class="text-muted">Choose Service</span></div>
@@ -90,7 +89,6 @@
             </div>
           </div>
 
-          
           <div class="form-step mb-4">
             <div class="mb-3">
               <label class="form-label">Step 1: Choose Service</label>
@@ -105,7 +103,6 @@
             </div>
           </div>
 
-          
           <div class="form-step mb-4" style="display: none;">
             <div class="mb-3">
               <label class="form-label">Step 2: Select Date & Time</label>
@@ -118,7 +115,6 @@
             </div>
           </div>
 
-         
           <div class="form-step mb-4" style="display: none;">
             <div class="mb-3">
               <label class="form-label">Step 3: Enter Details</label>
@@ -139,15 +135,12 @@
             </div>
           </div>
 
-          
           <div class="form-step mb-4" style="display: none;">
             <h5 class="mb-3">Step 4: Confirm Appointment</h5>
-            <p class="mb-4">Review your details and click confirm to finish the process.</p>
+            <p>Review your details and click confirm to finish.</p>
             <div class="d-flex justify-content-between">
               <button class="btn btn-secondary" onclick="prevStep()">Back</button>
               <button class="btn btn-success" onclick="confirmAppointment()">Confirm Appointment</button>
-             
-
             </div>
           </div>
         </div>
@@ -161,166 +154,156 @@
             <button class="btn btn-outline-secondary btn-sm">Filter</button>
           </div>
           <input type="text" class="form-control mb-3" placeholder="Search" />
-          
           <h6>Status</h6>
           <div class="border p-3 rounded" id="statusContainer">
+            <p class="text-muted">No appointment scheduled.</p>
             <a href="#" class="text-primary me-3" id="editAppointment">Edit</a>
             <a href="#" class="text-danger" id="deleteAppointment">Delete</a>
           </div>
-          
-          <footer style="background-color: #1a1a1a; padding: 2rem 1rem; text-align: center; color: #ccc;">
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap;">
-              <a href="studentDB.html" style="text-decoration: none; color: #ccc;">Student Dashboard</a>
-              <a href="Landingpage.html" style="text-decoration: none; color: #ccc;">Sign In</a>
-            </div>
-            <div style="font-size: 0.8rem; color: #888;">
-              <p>Location: T.I.P Manila Clinic</p>
-              <p>Email: info@tip.edu.ph</p>
-              <p>Number: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566</p>
-            </div>
-          </footer>
-          
-          <!-- Back to Top Button -->
-          <a href="#" id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #ffdb58; color: #222; border-radius: 50%; padding: 12px; text-decoration: none; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">
-            ↑
-          </a>
-          
-          <!-- Scripts -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-          
-          <script>
-          // Back to Top button behavior
-          window.onscroll = function () {
-            const backToTopButton = document.getElementById("back-to-top");
-            backToTopButton.style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
-          };
-          
-          document.getElementById("back-to-top").onclick = function (e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          };
-          
-          // Form Stepper Logic
-          let currentStep = 0;
-          const steps = document.querySelectorAll(".form-step");
-          const progressBar = document.getElementById("progressBar");
-          
-          function showStep(index) {
-            steps.forEach((step, i) => {
-              step.style.display = (i === index) ? "block" : "none";
-            });
-            const progressPercent = ((index + 1) / steps.length) * 100;
-            progressBar.style.width = progressPercent + "%";
-            progressBar.setAttribute("aria-valuenow", progressPercent);
-            currentStep = index;
-          }
-          
-          function nextStep() {
-            if (currentStep < steps.length - 1) {
-              showStep(currentStep + 1);
-            }
-          }
-          
-          function prevStep() {
-            if (currentStep > 0) {
-              showStep(currentStep - 1);
-            }
-          }
-          
-          // Search/Filter button example (optional depending on your page)
-          document.querySelector('.btn-outline-secondary:first-child')?.addEventListener('click', function() {
-            const searchValue = document.querySelector('input[type="text"]').value;
-            alert('You searched for: ' + searchValue);
-          });
-          
-          document.querySelector('.btn-outline-secondary:nth-child(2)')?.addEventListener('click', function() {
-            alert('Filter button clicked!');
-          });
-          
-          document.querySelector('input[type="text"]')?.addEventListener('input', function(event) {
-            console.log('Typing:', event.target.value);
-          });
-          
-          // Appointment logic
-          let appointmentDetails = {};
-          
-          function confirmAppointment() {
-            const service = document.querySelector('select.form-select').value;
-            const date = document.querySelector('input[type="date"]').value;
-            const time = document.querySelector('input[type="time"]').value;
-            const surname = document.querySelector('input[placeholder="Surname"]').value;
-            const firstname = document.querySelector('input[placeholder="First Name"]').value;
-            const email = document.querySelector('input[type="email"]').value;
-            const concern = document.querySelector('textarea').value;
-          
-            if (!service || !date || !time || !surname || !firstname || !email || !concern) {
-              alert('Please complete all fields before confirming.');
-              return;
-            }
-          
-            appointmentDetails = { service, date, time, surname, firstname, email, concern };
-          
-            const statusContainer = document.getElementById('statusContainer');
-            statusContainer.innerHTML = `
-              <p class="mb-1"><strong>${service}</strong> <span class="text-success float-end">Confirmed</span></p>
-              <p class="mb-1">${new Date(date).toLocaleDateString()}</p>
-              <p class="mb-3">${time}</p>
-              <p class="mb-1">Name: ${firstname} ${surname}</p>
-              <p class="mb-1">Email: ${email}</p>
-              <p class="mb-1">Concern: ${concern}</p>
-              <a href="#" class="text-primary me-3" id="editAppointment">Edit</a>
-              <a href="#" class="text-danger" id="deleteAppointment">Delete</a>
-            `;
-          
-            alert('Appointment Confirmed!');
-            showStep(0);
-            bindEditDelete();
-          }
-          
-          function bindEditDelete() {
-            document.getElementById('editAppointment')?.addEventListener('click', function(e) {
-              e.preventDefault();
-              editAppointment();
-            });
-          
-            document.getElementById('deleteAppointment')?.addEventListener('click', function(e) {
-              e.preventDefault();
-              deleteAppointment();
-            });
-          }
-          
-          function editAppointment() {
-            if (!appointmentDetails.service) {
-              alert('No appointment to edit.');
-              return;
-            }
-          
-            document.querySelector('select.form-select').value = appointmentDetails.service;
-            document.querySelector('input[type="date"]').value = appointmentDetails.date;
-            document.querySelector('input[type="time"]').value = appointmentDetails.time;
-            document.querySelector('input[placeholder="Surname"]').value = appointmentDetails.surname;
-            document.querySelector('input[placeholder="First Name"]').value = appointmentDetails.firstname;
-            document.querySelector('input[type="email"]').value = appointmentDetails.email;
-            document.querySelector('textarea').value = appointmentDetails.concern;
-          
-            showStep(0);
-          }
-          
-          function deleteAppointment() {
-            if (confirm('Are you sure you want to delete this appointment?')) {
-              document.getElementById('statusContainer').innerHTML = `
-                <p class="text-muted">No appointment scheduled.</p>
-              `;
-              appointmentDetails = {};
-            }
-          }
-          
-          window.onload = () => {
-            showStep(0);
-            bindEditDelete();
-          };
-          </script>
-          
+        </div>
+      </div>
+    </div>
+  </div>
 
+
+  <footer>
+    <div class="mb-3">
+      <a href="studentDB.html">Student Dashboard</a>
+      <a href="Landingpage.html">Sign In</a>
+    </div>
+    <div style="font-size: 0.85rem; color: #888;">
+      <p>Location: T.I.P Manila Clinic</p>
+      <p>Email: info@tip.edu.ph</p>
+      <p>Phone: (02) 8733-9117 / (02) 7918-8476 / 0917-177-2566</p>
+    </div>
+  </footer>
+
+  <a href="#" id="back-to-top">↑</a>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+   
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('back-to-top');
+      btn.style.display = (window.scrollY > 100) ? 'block' : 'none';
+    });
+    document.getElementById('back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+ 
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".form-step");
+    const progressBar = document.getElementById("progressBar");
+
+    function showStep(index) {
+      steps.forEach((step, i) => step.style.display = (i === index) ? 'block' : 'none');
+      progressBar.style.width = ((index + 1) / steps.length) * 100 + "%";
+    }
+
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        showStep(++currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        showStep(--currentStep);
+      }
+    }
+
+    let appointmentDetails = {};
+
+function confirmAppointment() {
+  const service = document.querySelector('select').value;
+  const date = document.querySelector('input[type="date"]').value;
+  const time = document.querySelector('input[type="time"]').value;
+  const surname = document.querySelector('input[placeholder="Surname"]').value;
+  const firstname = document.querySelector('input[placeholder="First Name"]').value;
+  const email = document.querySelector('input[type="email"]').value;
+  const concern = document.querySelector('textarea').value;
+
+  if (!service || !date || !time || !surname || !firstname || !email || !concern) {
+    alert('Please complete all fields before confirming.');
+    return;
+  }
+
+  appointmentDetails = { service, date, time, surname, firstname, email, concern };
+
+  
+  const status = document.getElementById('statusContainer');
+  status.innerHTML = `
+    <p><strong>${service}</strong> <span class="text-success float-end">Confirmed</span></p>
+    <p>${date} at ${time}</p>
+    <p>${surname}, ${firstname}</p>
+    <p>${email}</p>
+    <p>Concern: ${concern}</p>
+    <a href="#" class="text-primary me-3" id="editAppointment">Edit</a>
+    <a href="#" class="text-danger" id="deleteAppointment">Delete</a>
+  `;
+
+  bindEditDelete();
+
+  alert('Appointment successfully booked!');
+  showStep(0);
+}
+
+
+function editAppointment() {
+  if (!appointmentDetails.service) {
+    alert('No appointment to edit.');
+    return;
+  }
+
+ 
+  document.querySelector('select.form-select').value = appointmentDetails.service;
+  document.querySelector('input[type="date"]').value = appointmentDetails.date;
+  document.querySelector('input[type="time"]').value = appointmentDetails.time;
+  document.querySelector('input[placeholder="Surname"]').value = appointmentDetails.surname;
+  document.querySelector('input[placeholder="First Name"]').value = appointmentDetails.firstname;
+  document.querySelector('input[type="email"]').value = appointmentDetails.email;
+  document.querySelector('textarea').value = appointmentDetails.concern;
+
+
+  showStep(0);
+}
+
+
+function deleteAppointment() {
+  if (confirm('Are you sure you want to delete this appointment?')) {
+   
+    appointmentDetails = {};
+
+    
+    const status = document.getElementById('statusContainer');
+    status.innerHTML = `<p class="text-muted">No appointment scheduled.</p>`;
+
+    alert('Appointment deleted.');
+  }
+}
+
+function bindEditDelete() {
+  document.getElementById('editAppointment')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    editAppointment();
+  });
+
+  document.getElementById('deleteAppointment')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    deleteAppointment();
+  });
+}
+
+
+window.onload = () => {
+  bindEditDelete();
+};
+
+
+
+  </script>
 </body>
 </html>
