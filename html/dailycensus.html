@@ -38,11 +38,27 @@
       font-size: 20px;
 }
 
-    .topbar-links {
-      display: flex;
-      gap: 10px;
-      margin-left:75%; 
+.topbar-links {
+  display: flex;
+  gap: 15px;
+  margin-left: 70%; 
 }
+
+.nav-link {
+  text-decoration: none;
+  color: white; 
+  padding: 8px 16px;
+  border: none; 
+  background: none; 
+  font-size: 14px;
+  transition: color 0.3s ease; 
+  font-family: sans-serif, 'Segoe UI';
+}
+
+.nav-link:hover {
+  color: black; 
+}
+
 
     .topbar-btn {
       padding: 6px 12px;
@@ -182,11 +198,12 @@
         </a>
         <div class="logo">TIP CMS</div>
         
-         <div class="topbar-links">
-          <a href="studentDB.html" class="topbar-btn">Student Dashboard</a>
-          <a href="medicalrecord.html" class="topbar-btn">My Medical Record</a>
-        </div>
-      </header>
+        <div class="topbar-links">
+            <a href="studentDB.html" class="nav-link">Student Dashboard</a>
+            <a href="medicalrecord.html" class="nav-link">My Medical Record</a>
+          </div>
+          </header>
+          
       
 
   <main class="container">
