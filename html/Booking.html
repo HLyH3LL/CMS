@@ -267,21 +267,24 @@
     }
 
     function editAppointment() {
-      if (!appointmentDetails.service) {
-        alert('No appointment to edit.');
-        return;
-      }
+  if (!appointmentDetails.service) {
+    alert('No appointment to edit.');
+    return;
+  }
 
-      document.querySelector('select.form-select').value = appointmentDetails.service;
-      document.querySelector('input[type="date"]').value = appointmentDetails.date;
-      document.querySelector('input[type="time"]').value = appointmentDetails.time;
-      document.querySelector('input[placeholder="Surname"]').value = appointmentDetails.surname;
-      document.querySelector('input[placeholder="First Name"]').value = appointmentDetails.firstname;
-      document.querySelector('input[type="email"]').value = appointmentDetails.email;
-      document.querySelector('textarea').value = appointmentDetails.concern;
+  document.querySelector('select.form-select').value = appointmentDetails.service;
+  document.querySelector('input[type="date"]').value = appointmentDetails.date;
+  document.querySelector('input[type="time"]').value = appointmentDetails.time;
+  document.querySelector('input[placeholder="Surname"]').value = appointmentDetails.surname;
+  document.querySelector('input[placeholder="First Name"]').value = appointmentDetails.firstname;
+  document.querySelector('input[type="email"]').value = appointmentDetails.email;
+  document.querySelector('textarea').value = appointmentDetails.concern;
 
-      showStep(0);
-    }
+  currentStep = 0;
+  showStep(currentStep);
+
+  alert('You can now edit your appointment details.');
+}
 
     function deleteAppointment() {
       if (confirm('Are you sure you want to delete this appointment?')) {
